@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: frontend-quality-dashboard-rubt
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: frontend-quality-dashboard-rubt
+    app.kubernetes.io/part-of: mc-quality-dashboard
+  name: frontend-quality-dashboard-rubt
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: frontend-quality-dashboard-rubt
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: frontend-quality-dashboard-rubt
+    spec:
+      containers:
+      - image: image
+        imagePullPolicy: Always
+        name: container-image
+        ports:
+        - containerPort: 8081
+        resources: {}
+status: {}
